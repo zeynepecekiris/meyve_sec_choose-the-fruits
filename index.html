@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case Example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; /* Açık gri arka plan */
+        }
+
+        .container {
+            background-color: #2f4f4f; /* Koyu yeşil */
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        select, button {
+            margin-top: 10px;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            background-color: #ccc; /* Gri renk */
+            color: black;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #2f4f4f; /* Koyu yeşil */
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #556b2f; /* Hover etkisi için biraz daha açık koyu yeşil */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Meyve Seçimi</h1>
+        <label for="fruits">Bir meyve seçin:</label>
+        <select id="fruits">
+            <option value="apple">Elma</option>
+            <option value="banana">Muz</option>
+            <option value="orange">Portakal</option>
+            <option value="grape">Üzüm</option>
+        </select>
+        <button onclick="showMessage()">Seç</button>
+
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function showMessage() {
+            const fruit = document.getElementById('fruits').value;
+            let message = '';
+
+            switch(fruit) {
+                case 'apple':
+                    message = 'Elma seçtiniz.';
+                    break;
+                case 'banana':
+                    message = 'Muz seçtiniz.';
+                    break;
+                case 'orange':
+                    message = 'Portakal seçtiniz.';
+                    break;
+                case 'grape':
+                    message = 'Üzüm seçtiniz.';
+                    break;
+                default:
+                    message = 'Bilinmeyen bir meyve seçtiniz.';
+            }
+
+            document.getElementById('message').textContent = message;
+        }
+    </script>
+</body>
+</html>
+
